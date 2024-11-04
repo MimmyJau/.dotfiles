@@ -24,6 +24,7 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
 
 # Load completions
 autoload -Uz compinit && compinit
@@ -36,13 +37,14 @@ autoload -Uz compinit && compinit
 # Reference 1: https://gist.github.com/thomd/7667642
 # Reference 2: https://gist.github.com/monolithed/efe54b62141159316c7a
 # macOS default: export LSCOLORS="exfxcxdxbxegedabagacad"
-export LS_COLORS="fi=0:di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43" # Roughly matches LSCOLORS default
+export LS_COLORS="fi=0:di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43" # Roughly matches macOS default
 
 
 # zsh styles
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # makes matching case-insensitive
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-# zstyle ':completion:*' menu no
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg-3"
 
@@ -69,3 +71,6 @@ setopt hist_find_no_dups
 alias vim='nvim'
 alias ls='ls -alG'
 alias lsn='\ls' # Need \ to call original ls instead of aliased
+
+# Shell integrations
+eval "$(fzf --zsh)"
