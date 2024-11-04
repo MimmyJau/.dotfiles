@@ -46,9 +46,6 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg-3"
-
-
 # Keybindings
 bindkey -e
 bindkey '^p' history-search-backward
