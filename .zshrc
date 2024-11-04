@@ -29,16 +29,16 @@ zinit light Aloxaf/fzf-tab
 # Load completions
 autoload -Uz compinit && compinit
 
+zinit cdreplay -q
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 
 # LS styles (LS_COLORS isn't used by macOS, but we set this to use with zstyle)
 # Reference 1: https://gist.github.com/thomd/7667642
 # Reference 2: https://gist.github.com/monolithed/efe54b62141159316c7a
 # macOS default: export LSCOLORS="exfxcxdxbxegedabagacad"
 export LS_COLORS="fi=0:di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43" # Roughly matches macOS default
-
 
 # zsh styles
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # makes matching case-insensitive
