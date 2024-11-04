@@ -20,8 +20,50 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Add in Powerlevel10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
+# Add in zsh plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+
+# Load completions
+autoload -Uz compinit && compinit
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+# LS styles (LS_COLORS isn't used by macOS, but we set this to use with zstyle)
+# Reference 1: https://gist.github.com/thomd/7667642
+# Reference 2: https://gist.github.com/monolithed/efe54b62141159316c7a
+# macOS default: export LSCOLORS="exfxcxdxbxegedabagacad"
+export LS_COLORS="fi=0:di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43" # Roughly matches LSCOLORS default
+
+
+# zsh styles
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # makes matching case-insensitive
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+# zstyle ':completion:*' menu no
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg-3"
+
+
+# Keybindings
+bindkey -e
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+
+# History
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
 # Aliases
 alias vim='nvim'
