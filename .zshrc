@@ -37,6 +37,7 @@ zinit cdreplay -q
 # LS styles (LS_COLORS isn't used by macOS, but we set this to use with zstyle)
 # Reference 1: https://gist.github.com/thomd/7667642
 # Reference 2: https://gist.github.com/monolithed/efe54b62141159316c7a
+# Reference 3: https://github.com/alacritty/alacritty/issues/3705
 # macOS default: export LSCOLORS="exfxcxdxbxegedabagacad"
 export LS_COLORS="fi=0:di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43" # Roughly matches macOS default
 
