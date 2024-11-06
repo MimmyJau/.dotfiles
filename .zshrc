@@ -71,3 +71,14 @@ alias lsn='\ls' # Need \ to call original ls instead of aliased
 
 # Shell integrations
 eval "$(fzf --zsh)"
+
+
+# fnm
+FNM_PATH="/Users/jimmy/.fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/Users/jimmy/.fnm:$PATH"
+  eval "`fnm env`"
+fi
+
+eval "$(fnm env --use-on-cd --shell zsh)"
+
