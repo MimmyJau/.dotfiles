@@ -10,6 +10,7 @@ updated dotfiles using gnu `stow .`
 - [basic zsh config](https://www.youtube.com/watch?v=ud7YxC33Z3w)
 - [kickstart.nvim setup](https://www.youtube.com/watch?v=m8C0Cq9Uv9o)
 - [alacritty config](https://alacritty.org/config-alacritty.html)
+- [tmux config](https://www.youtube.com/watch?v=DzNmUNvnB04)
 
 ## other dotfiles
 - [dreamsofcode-io](https://github.com/dreamsofcode-io/dotfiles/tree/main)
