@@ -70,8 +70,7 @@ setopt hist_find_no_dups
 
 # Aliases
 alias vim='nvim'
-alias ls='ls -alG'
-alias lsn='\ls' # Need \ to call original ls instead of aliased
+alias ll='ls -alG'
 
 # Shell integrations
 eval "$(fzf --zsh)"
