@@ -1,6 +1,6 @@
 # jimmy's dotfiles
 
-Updated dotfiles using gnu `stow .`.
+updated dotfiles using gnu `stow .`
 
 ## setup
 - [how to setup dotfiles](https://www.youtube.com/watch?v=gibqkbdVbeY)
