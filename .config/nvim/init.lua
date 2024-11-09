@@ -916,6 +916,30 @@ require('lazy').setup({
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
+  {
+    -- This template was copied from 'kickstart.plugins.neo-tree'
+    'nvim-neo-tree/neo-tree.nvim',
+    version = '*',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+      'MunifTanjim/nui.nvim',
+    },
+    cmd = 'Neotree',
+    keys = {
+      { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    },
+    opts = {
+      filesystem = {
+        hijack_netrw_behavior = 'disabled', -- Add this so `:e .` still opens netrc
+        window = {
+          mappings = {
+            ['\\'] = 'close_window',
+          },
+        },
+      },
+    },
+  },
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
